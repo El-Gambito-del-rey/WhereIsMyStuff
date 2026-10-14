@@ -1,4 +1,3 @@
-// Load data and setup event listeners when page loads
 document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.getElementById("searchInput");
   const searchBtn = document.getElementById("searchBtn");
@@ -6,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let inventory = [];
 
-  // Fetch the data.json file
+  // Fetch your real inventory data from data.json
   fetch("data.json")
     .then((response) => response.json())
     .then((data) => {
@@ -17,17 +16,15 @@ document.addEventListener("DOMContentLoaded", () => {
       resultsDiv.innerHTML = `<p class="no-results">Error loading database file.</p>`;
     });
 
-  // Function to perform the search
   function performSearch() {
     const query = searchInput.value.trim().toLowerCase();
-    resultsDiv.innerHTML = ""; // Clear previous results
+    resultsDiv.innerHTML = "";
 
     if (!query) {
       resultsDiv.innerHTML = `<p class="no-results">Please enter a CAS number or chemical name.</p>`;
       return;
     }
 
-    // Filter items matching CAS or Chemical Name
     const matches = inventory.filter((item) => {
       const matchCas = item.cas.toLowerCase().includes(query);
       const matchName = item.name.toLowerCase().includes(query);
@@ -39,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Build the HTML display for matches
     matches.forEach((item) => {
       const card = document.createElement("div");
       card.className = "result-card";
@@ -67,10 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Trigger search on button click
   searchBtn.addEventListener("click", performSearch);
-
-  // Trigger search when pressing "Enter" in the input field
   searchInput.addEventListener("keypress", (e) => {
     if (e.key === "Enter") {
       performSearch();
