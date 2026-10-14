@@ -1,0 +1,40 @@
+[
+  {
+    "cas": "50-00-0",
+    "name": "Formaldehyde 37% Solution",
+    "containers": [
+      {
+        "container": "1L Glass Bottle",
+        "location": "Cabinet A - Shelf 2"
+      },
+      {
+        "container": "500mL Plastic Jug",
+        "location": "Flammables Cabinet - Shelf 1"
+      }
+    ]
+  },
+  {
+    "cas": "58-08-2",
+    "name": "Caffeine",
+    "containers": [
+      {
+        "container": "100g Amber Glass Jar",
+        "location": "Solid Reagents Room - Shelf B"
+      }
+    ]
+  },
+  {
+    "cas": "67-56-1",
+    "name": "Methanol",
+    "containers": [
+      {
+        "container": "2.5L Glass Bottle",
+        "location": "Solvent Storage Room - Rack 3"
+      },
+      {
+        "container": "4L Amber Bottle",
+        "location": "Solvent Storage Room - Rack 3"
+      }
+    ]
+  }
+]

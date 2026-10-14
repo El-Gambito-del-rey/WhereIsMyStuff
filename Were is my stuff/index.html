@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Where is my reagent?</title>
+  <style>
+    /* Dark Theme Base */
+    body {
+      background-color: #121212;
+      color: #e0e0e0;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 700px;
+      background-color: #1e1e1e;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    }
+
+    h1 {
+      margin-top: 0;
+      color: #ffffff;
+      font-size: 2rem;
+      border-bottom: 2px solid #333;
+      padding-bottom: 0.75rem;
+      text-align: center;
+    }
+
+    .search-box {
+      display: flex;
+      gap: 10px;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    input[type="text"] {
+      flex: 1;
+      padding: 12px;
+      font-size: 1rem;
+      background-color: #2b2b2b;
+      color: #ffffff;
+      border: 1px solid #444;
+      border-radius: 4px;
+      outline: none;
+    }
+
+    input[type="text"]:focus {
+      border-color: #4caf50;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 1rem;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.2s;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    /* Results Formatting */
+    .results-container {
+      margin-top: 1.5rem;
+    }
+
+    .result-card {
+      background-color: #2a2a2a;
+      border: 1px solid #3a3a3a;
+      border-radius: 6px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .chemical-title {
+      font-size: 1.25rem;
+      color: #4caf50;
+      margin: 0 0 0.5rem 0;
+    }
+
+    .cas-badge {
+      display: inline-block;
+      background-color: #333;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      color: #bbb;
+      margin-bottom: 1rem;
+    }
+
+    .inventory-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .inventory-item {
+      background-color: #1e1e1e;
+      padding: 0.75rem;
+      border-radius: 4px;
+      margin-bottom: 0.5rem;
+      border-left: 3px solid #4caf50;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .inventory-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .no-results {
+      color: #888;
+      font-style: italic;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Where is my reagent?</h1>
+    
+    <div class="search-box">
+      <input 
+        type="text" 
+        id="searchInput" 
+        placeholder="Enter CAS Number or Chemical Name..." 
+      />
+      <button id="searchBtn">Search</button>
+    </div>
+
+    <div class="results-container" id="results">
+      <!-- Search results will appear here dynamically via script.js -->
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
